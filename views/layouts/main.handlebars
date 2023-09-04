@@ -17,10 +17,9 @@
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            Welcome
-            {{user_name}}
+            <a href='/'>homepage</a>
             |
-            <a href='/profile'>profile</a>
+            <a href='/profile'>Dashboard</a>
             |
             <button class='no-button' id='logout'>logout</button>
           {{else}}
