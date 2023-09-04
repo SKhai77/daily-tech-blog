@@ -4,9 +4,17 @@
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
 <div>
-  <input placeholder="Comment..." class="commentInput"/>
+  <input placeholder='Comment...' class='commentInput' />
   <button>Comment</button>
 </div>
-<section class="commentList">
-  
+<section class='commentList'>
+  {{!-- {{#each comments as |comment|}} --}}
+    <div class='row mb-4 post'>
+      <div class='col-md-7'>
+        <p>
+          {{comment.commentBody}}
+        </p>
+      </div>
+    </div>
+  {{!-- {{/each}} --}}
 </section>
