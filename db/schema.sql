@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS futuretechoccean_db;
-CREATE DATABASE futuretechoccean_db;
+DROP DATABASE IF EXISTS mvctechblog_db;
+CREATE DATABASE mvctechblog_db;
