@@ -3,29 +3,39 @@
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Tech Blog</title>
+    <title>MVC Tech Blog</title>
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
   </head>
 
   <body>
     <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
-        <h1>
-          <a href='/'>Tech Blog</a>
-        </h1>
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href='/'>homepage</a>
-            |
-            <a href='/profile'>Dashboard</a>
-            |
-            <button class='no-button' id='logout'>logout</button>
-          {{else}}
-            <a href='/login'>login</a>
-          {{/if}}
+      <header>
+        <nav class='header-nav'>
+          <ul>
+            <li><a href='/'>Home</a>
+            </li>
+
+            <li>
+              <a href='/profile'>Dashboard</a>
+            </li>
+
+            <li>
+              <!-- Conditionally render login or logout links -->
+              {{#if logged_in}}
+                <button class='no-button' id='logout'>Logout</button>
+              {{else}}
+                <a href='/login'>Login</a>
+              {{/if}}
+            </li>
+          </ul>
+
         </nav>
+
+        <h1 class='main-title'>
+          <a href='/'>MVC Tech Blog</a>
+        </h1>
+
       </header>
       <main class='container container-fluid mt-5'>
         <!-- Render the sub layout -->
