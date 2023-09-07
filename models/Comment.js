@@ -20,6 +20,11 @@ Comment.init(
       type: DataTypes.TEXT, // Use TEXT for potentially longer comment content
       allowNull: false,
     },
+    // 'username' to store the username associated with the comment
+    username: {
+      type: DataTypes.STRING, // Change to the appropriate data type for username
+      allowNull: false,
+    },
     // 'post_id' is a foreign key referencing the 'post' model's 'id' field
     post_id: {
       type: DataTypes.INTEGER,
@@ -37,5 +42,6 @@ Comment.init(
     modelName: 'comment', 
   }
 );
+
 // Export the Comment model
-module.exports = Comment; 
+module.exports = Comment;
