@@ -372,11 +372,11 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
@@ -420,12 +420,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #07aefc;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #6ecbf7;
   text-decoration: underline;
 }
 
