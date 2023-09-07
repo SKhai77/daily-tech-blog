@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
+    // Pass serialized data and session flag into the template
     res.render('homepage', {
       posts,
       logged_in: req.session.logged_in,
@@ -28,13 +28,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Display a specific post and its associated comments
 router.get('/post/:id', async (req, res) => {
   try {
+    // Get the post with associated user and comments
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ['name'],
+        },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
         },
       ],
     });
@@ -42,11 +53,12 @@ router.get('/post/:id', async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render('post', {
-      ...post,
+      post,
       logged_in: req.session.logged_in,
       user_name: req.session.user_name,
     });
   } catch (err) {
+    console.error(err); // Log the error for debugging
     res.status(500).json(err);
   }
 });
@@ -54,7 +66,7 @@ router.get('/post/:id', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    // Find the logged-in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
@@ -82,4 +94,5 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Export the router
 module.exports = router;
