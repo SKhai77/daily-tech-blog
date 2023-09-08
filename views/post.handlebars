@@ -1,13 +1,19 @@
 <div class='text-center'>
-  <h2>{{post.name}}</h2>
-  <p>{{post.description}}</p>
-  <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+  <h2>{{post.title}}</h2>
+  <p>{{post.content}}</p>
+  <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
 </div>
 <div>
-  <input placeholder='Comment...' class='commentInput' />
-  <button id="comment-button">Comment</button>
+  <!-- Add this form element for comment input with the 'comment-form' id -->
+  <form id="comment-form">
+    <div class="form-group">
+      <input placeholder='Comment...' class='commentInput' />
+      <!-- This {{post.id}} can be used here as needed -->
+      <button id="comment-button" data-post-id="{{post.id}}">Comment</button>
+    </div>
+  </form>
 </div>
-{{!-- LOOP THROUGH COMMENTS THAT BELONG TO THIS POST AND DISPLAY THEIR COMMENTBODY --}}
+{{!-- Loop through comments that belong to this post and display their commentbody --}}
 <section class='commentList'>
   {{#each comments}}
     <div class='row mb-4 post'>
@@ -15,7 +21,7 @@
         <p>
           {{this.commentBody}}
         </p>
-        <p>Comment by {{this.user.name}}</p>
+        <p>Comment by {{this.user.username}}</p>
       </div>
     </div>
   {{/each}}
