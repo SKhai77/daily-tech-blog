@@ -17,28 +17,38 @@ Comment.init(
     },
     // 'commentBody' stores the content of the comment as text
     commentBody: {
-      type: DataTypes.TEXT, // Use TEXT for potentially longer comment content
+      type: DataTypes.TEXT, 
       allowNull: false,
     },
     // 'username' to store the username associated with the comment
     username: {
-      type: DataTypes.STRING, // Change to the appropriate data type for username
+      type: DataTypes.STRING,
       allowNull: false,
     },
     // 'post_id' is a foreign key referencing the 'post' model's 'id' field
     post_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'post',
+        key: 'id',
+      },
+    },
+    // 'user_id' is a foreign key referencing the 'user' model's 'id' field
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
         key: 'id',
       },
     },
   },
   {
     sequelize,            
-    timestamps: false,    
+    timestamps: false, 
     freezeTableName: true, 
-    underscored: true,     
+    underscored: true,  
     modelName: 'comment', 
   }
 );
