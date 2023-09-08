@@ -1,8 +1,10 @@
 [
     {
-        "commentBody": "This is a test!"
+        "commentBody": "This is a test!",
+        "username": "Sal"
     },
     {
-        "commentBody": "This is also a test!"
+        "commentBody": "This is also a test!",
+        "username": "Amiko"
     }
 ]
