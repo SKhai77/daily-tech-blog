@@ -1,7 +1,6 @@
 // Import necessary modules and initialize the Sequelize model and connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Comment = require('./Comment');
 
 class Post extends Model {}
 
@@ -15,13 +14,13 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // 'name' stores the name of the post as a string
-    name: {
+    // 'title' stores the title of the post as a string
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // 'description' stores a description of the post as a string
-    description: {
+    // 'content' stores the content of the post as a string
+    content: {
       type: DataTypes.STRING,
     },
     // 'date_created' stores the creation date of the post as a date
@@ -47,12 +46,6 @@ Post.init(
     modelName: 'post',    
   }
 );
-
-// Define the association between Post and Comment models
-Post.hasMany(Comment, {
-  foreignKey: 'post_id', // The foreign key in the Comment model that links to Post
-  onDelete: 'CASCADE',   
-});
 
 // Export the Post model
 module.exports = Post;
