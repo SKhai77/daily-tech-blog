@@ -1,4 +1,5 @@
-// Import 
+
+// Import necessary modules and initialize the Express.js router
 const router = require('express').Router();
 const { User } = require('../../models');
 
@@ -71,4 +72,5 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// Export the router
 module.exports = router;
