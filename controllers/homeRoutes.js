@@ -1,7 +1,9 @@
+// Import necessary modules and initialize the Express.js router
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Define a route to handle GET requests for the homepage
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
@@ -9,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -36,16 +38,10 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
         {
-          model: Comment,
-          include: [
-            {
-              model: User,
-              attributes: ['name'],
-            },
-          ],
+          model: Comment,          
         },
       ],
     });
@@ -58,7 +54,7 @@ router.get('/post/:id', async (req, res) => {
       user_name: req.session.user_name,
     });
   } catch (err) {
-    console.error(err); // Log the error for debugging
+    console.error(err);
     res.status(500).json(err);
   }
 });
