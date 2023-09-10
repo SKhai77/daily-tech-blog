@@ -1,7 +1,7 @@
 // Import the User, Post, and Comment models
 const User = require('./User');
 const Post = require('./Post');
-const Comment = require("./Comment")
+const Comment = require('./Comment');
 
 // Define associations between User, Post, and Comment models
 User.hasMany(Post, {
