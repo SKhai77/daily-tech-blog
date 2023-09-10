@@ -1,46 +1,56 @@
+/* Add a border to the header except for the last project */
 header, .project:not(:last-child) {
   border-bottom: 1px solid #cccccc;
 }
 
+/* Style for buttons with class "no-button" */
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #07aefc;
   text-decoration: none;
   font-size: 100%;
 }
 
+/* Hover effect for buttons with class "no-button" */
 .no-button:hover {
-  color: #065b83;
+  color: #6ecbf7;
   text-decoration: underline;
 }
 
+/* Background color for the header */
 header {
   background-color: #2b3e69;
 }
+
+/* Background color fo the body */
 body {
   background-color: #F0F0F0;
 }
 
+/* Styles for the header navigation */
 .header-nav {
   padding: 0;
   margin-top: 1%;
   margin-left: 2%;
 } 
 
+/* Styles for the unordered list */
 ul {
   display: flex;
   list-style: none;
  }
 
+/* Styles for list items */
  li {
-margin-right: -10%;
-margin-left: 15%;
-color: #F0F0F0;
+  margin-right: -10%;
+  margin-left: 15%;
+  color: #F0F0F0;
 }
 
+/* Styles for the main title */
 .main-title {
   background-color: #F0F0F0;
   padding: 5px;
@@ -50,3 +60,26 @@ color: #F0F0F0;
   border-radius: 7px 20px;
   box-shadow: 5px 5px 50px #fff;
 } 
+
+/* Define the background color for the title */
+.title-style {
+  background-color: #2b3e69; 
+  color: #fff; 
+  padding: 5px 10px; 
+}
+
+/* Align "Created by" and date to the right */
+.post-info {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Style for "Created by" text */
+.created-by {
+  font-weight: bold;
+}
+
+/* Style for the date */
+.date {
+  font-style: italic;
+}
