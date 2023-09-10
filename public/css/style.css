@@ -65,7 +65,13 @@ ul {
 .title-style {
   background-color: #2b3e69; 
   color: #fff; 
-  padding: 5px 10px; 
+  padding: 5px; 
+}
+
+/* Add padding to the post */
+.post-content {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* Align "Created by" and date to the right */
