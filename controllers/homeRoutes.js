@@ -41,15 +41,19 @@ router.get('/post/:id', async (req, res) => {
           attributes: ['username'],
         },
         {
-          model: Comment,          
+          model: Comment,
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
+    // Pass user_id from the session to the template
+    const user_id = req.session.user_id;
+
     res.render('post', {
       post,
+      user_id, // Pass user_id to the template
       logged_in: req.session.logged_in,
       user_name: req.session.user_name,
     });
