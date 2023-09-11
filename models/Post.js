@@ -2,6 +2,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Define the Post model class that extends Sequelize's Model class
 class Post extends Model {}
 
 // Initialize the Post model with its fields and configurations
@@ -32,6 +33,7 @@ Post.init(
     // 'user_id' is a foreign key referencing the 'user' model's 'id' field
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -39,11 +41,11 @@ Post.init(
     },
   },
   {
-    sequelize,           
-    timestamps: false,    
-    freezeTableName: true, 
-    underscored: true, 
-    modelName: 'post',    
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post',
   }
 );
 
