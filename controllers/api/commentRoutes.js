@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const { commentBody, post_id } = req.body;
-    const { username } = req.session; // Get the username from the session
+    const { username, user_id } = req.session; // Get the username from the session
 
     if (!username) {
       // Handle the case where username is not available (e.g., user is not authenticated)
@@ -28,6 +28,7 @@ router.post('/', withAuth, async (req, res) => {
       commentBody,
       username, // Attach the username to the comment
       post_id,
+      user_id,
     });
 
     res.status(201).json(newComment);
