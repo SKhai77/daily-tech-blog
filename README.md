@@ -81,7 +81,7 @@ To use the application,
     npm start               Press Enter
 ```
 
-- Visit the live website: 
+- Visit the live website: https://sk77-mvctechblog-e599ac753156.herokuapp.com/ 
 
 
 ## License
