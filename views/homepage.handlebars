@@ -1,22 +1,24 @@
-<!-- Loop over each object in the posts array -->
-{{#each posts as |post| }}
-<div class="row mb-4 post">
-  <div class="col-md-12">
-  
-    <!-- Add a CSS class for styling the title -->
-    <h2 class="title-style">
-      <a href="/post/{{post.id}}">{{post.title}}</a>
-    </h2>
+{{#each posts as |post|}}
+  <div class='post-container'>
+    <!-- container class for styling -->
+    <div class='row mb-4 post'>
+      <div class='col-md-12'>
 
-    <p class="post-content">
-      {{post.content}}
-    </p>
-    
-    <!-- Use CSS to align "Created by" and date to the right corner -->
-    <div class="post-info">
-      <span class="created-by">Created by {{post.user.username}}</span>
-      <span class="date">on {{format_date post.date_created}}</span>
+        <h2 class='post-title'>
+          
+          <a href='/post/{{post.id}}'>{{post.title}}</a>
+          <div class='post-info'>
+            <span class='post-author'>Created by {{post.user.username}}</span>           
+            <span class='post-date'>on {{format_date post.date_created}}</span>
+            
+          </div>
+        </h2>
+
+        <p class='post-content'>
+          {{post.content}}
+        </p>
+
+      </div>
     </div>
   </div>
-</div>
 {{/each}}
