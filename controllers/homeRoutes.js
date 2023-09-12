@@ -3,6 +3,29 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// GET route to render the edit post page
+router.get('/edit-post/:id', withAuth, async (req, res) => {
+  try {
+
+    // Find the post by ID
+    const postData = await Post.findByPk(req.params.id);
+
+    if (!postData) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+
+    // Render the edit-post.handlebars view and pass the post data
+    res.render('edit-post', {
+      post: postData.get({ plain: true }),
+      logged_in: req.session.logged_in,
+      editing: true, // Set editing to true when rendering the edit post page
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Define a route to handle GET requests for the homepage
 router.get('/', async (req, res) => {
   try {
