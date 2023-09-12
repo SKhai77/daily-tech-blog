@@ -1,10 +1,5 @@
-/* Add a border to the header except for the last project */
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #cccccc;
-}
-
-/* Style for buttons with class "no-button" */
-.no-button {
+/* Button Styles */
+.button {
   background: none;
   border: none;
   padding: 0;
@@ -14,78 +9,101 @@ header, .project:not(:last-child) {
   font-size: 100%;
 }
 
-/* Hover effect for buttons with class "no-button" */
-.no-button:hover {
+.button:hover {
   color: #6ecbf7;
   text-decoration: underline;
 }
 
-/* Background color for the header */
-header {
+/* Header Styles */
+.header {
   background-color: #2b3e69;
+  padding: 0;
 }
 
-/* Background color fo the body */
-body {
-  background-color: #F0F0F0;
-}
-
-/* Styles for the header navigation */
 .header-nav {
   padding: 0;
   margin-top: 1%;
-  margin-left: 2%;
-} 
+  margin-left: 1%;
+}
 
-/* Styles for the unordered list */
-ul {
+.header-nav ul {
   display: flex;
   list-style: none;
- }
+}
 
-/* Styles for list items */
- li {
-  margin-right: -10%;
+.header-nav li {
   margin-left: 15%;
+  margin-right: -10%;
   color: #F0F0F0;
 }
 
-/* Styles for the main title */
+/* Main Title Styles */
 .main-title {
   background-color: #F0F0F0;
   padding: 5px;
   margin-top: 1%;
-  margin-left: 22%;
+  margin-left: 23%;
   display: inline-block;
   border-radius: 7px 20px;
   box-shadow: 5px 5px 50px #fff;
-} 
-
-/* Define the background color for the title */
-.title-style {
-  background-color: #2b3e69; 
-  color: #fff; 
-  padding: 5px; 
 }
 
-/* Add padding to the post */
+/* Post Styles */
+.post-container {
+  background-color: #F0F0F0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.post-title {
+  background-color: #2b3e69;
+  color: #fff;
+  padding: 5px;
+}
+
 .post-content {
+  margin-top: 20px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* Align "Created by" and date to the right */
 .post-info {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.post-info .date {
+  font-style: italic;
+}
+
+/* Comment Styles */
+.comment-text {
+  /* display: inline-block; */
+  background-color: #F0F0F0;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+
+#comment-form {
+  padding-left: 5px;
+}
+
+.comment-content {
+  padding: 10px;
+  font-size: 12px;
+  font-style: italic;
   text-align: right;
-  margin-top: 10px;
 }
 
-/* Style for "Created by" text */
-.created-by {
-  font-weight: bold;
+.comment-body {
+  background-color: #F0F0F0;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-/* Style for the date */
-.date {
+.comment-author {
+  font-size: 12px;
   font-style: italic;
 }
