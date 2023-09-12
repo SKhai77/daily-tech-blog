@@ -3,7 +3,7 @@ document.getElementById('comment-form').addEventListener('submit', async (e) => 
   e.preventDefault();
 
   // Get the comment input and post_id from the button's data attribute
-  const commentBody = document.querySelector('.commentInput').value;
+  const commentBody = document.querySelector('.comment-input').value;
   const post_id = document.querySelector('#comment-button').getAttribute('data-post-id');
 
   try {
