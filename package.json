@@ -1,7 +1,7 @@
 {
   "name": "mvc-tech-blog",
   "version": "1.0.0",
-  "description": "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)",
+  "description": "A tech blog built with MVC architecture.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,8 @@
     "seed": "node seeds/seed.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Your Name or Organization",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
