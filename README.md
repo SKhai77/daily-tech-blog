@@ -22,7 +22,6 @@ MVC Tech Blog is a platform designed for tech enthusiasts and developers seeking
 - Node.js 
 - NPM 
 - JSON 
-- Inquirer 
 - MYSQL2 
 - Dotenv 
 - Sequelize
