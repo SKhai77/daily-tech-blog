@@ -38,7 +38,7 @@
 }
 
 /* Main Title Styles */
-.main-title {
+.main-title a {
   background-color: #F0F0F0;
   padding: 5px;
   margin-top: 1%;
@@ -46,6 +46,7 @@
   display: inline-block;
   border-radius: 7px 20px;
   box-shadow: 5px 5px 50px #fff;
+  text-decoration: none;
 }
 
 /* Post Styles */
