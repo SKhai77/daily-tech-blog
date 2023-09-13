@@ -12,8 +12,8 @@ document.getElementById('comment-form').addEventListener('submit', async (e) => 
     const user_id = user_idElement ? user_idElement.getAttribute('data-user-id') : null;
 
     if (!user_id) {
-      // If user_id is not available, handle the error gracefully
-      console.error('User ID not found.');
+      // If user_id is not a registered/logged in, redirect to the login page
+      window.location.href = '/login';
       return;
     }
 
